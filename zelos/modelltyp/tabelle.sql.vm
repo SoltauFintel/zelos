@@ -1,0 +1,22 @@
+-- ${nameTabelle}
+CREATE SEQUENCE SEQ_${nameTabelle} WITH START 1000;
+
+CREATE TABLE ${nameTabelle} (
+#foreach($f in $felder)
+	${f.nameTabelle} ${f.typTabelle}#if($f.erforderlich) NOT NULL#end${f.komma}
+#end
+);
+
+GRANT SELECT,INSERT,UPDATE,DELETE ON ${nameTabelle} TO USERXXX;
+GRANT SELECT ON SEQ_${nameTabelle} TO USERXXX;
+
+-- Primary Key
+ALTER TABLE ${nameTabelle} ADD CONSTRAINT ${nameTabelle}_PK PRIMARY KEY(${felder[0].name});
+
+-- Anzahl FK: ${nfk}
+
+-- Anzahl Indizes: ${nix}
+
+COMMIT;
+-- ~${nameTabelle}
+

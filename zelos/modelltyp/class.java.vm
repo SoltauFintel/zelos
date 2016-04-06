@@ -1,0 +1,17 @@
+package irgendwas;
+
+public class ${name} {
+#foreach($f in $felder)
+	private ${f.javaTyp} ${f.name}#if($f.vorbelegung!="") = ${f.vorbelegung}#end;
+#end
+#foreach($f in $felder)
+
+	public ${f.javaTyp} ${f.getter}() {
+		return ${f.name};
+	}
+
+	public void set${f.name1}(${f.javaTyp} ${f.name}) {
+		this.${f.name} = ${f.name};
+	}
+#end
+}

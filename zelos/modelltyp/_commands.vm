@@ -1,0 +1,2 @@
+erstelle "class.java", "output/${name}.java"
+erstelle "tabelle.sql", "output/${nameTabelle}.sql"
