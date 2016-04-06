@@ -1,8 +1,8 @@
 # Zelos CodeGenerator
 
-Dieses Projekt dient dazu Java-Dateien und SQL-Skripte zu generieren. Dabei werden die Entitäten in einem Modell
-definiert. Dieses Modell wird als XML-Datei gespeichert und kann so zusammen mit den Sourcen versioniert werden.
-Zelos ist dreigeteilt: Modell, CodeGenerator und GUI. Die Entitäten können also komfortabel in einer Desktop-GUI
+Dieses Projekt dient dazu Java-Dateien und SQL-Skripte zu generieren. Dabei werden die Entitäten in einem **Modell**
+definiert. Dieses Modell wird als **XML-Datei** gespeichert und kann so zusammen mit den Sourcen versioniert werden.
+Zelos ist dreigeteilt: Modell, CodeGenerator und GUI. Die Entitäten können also komfortabel in einer Desktop-**GUI**
 bearbeitet werden. Eine oder mehrere Entitäten können dann auf Knopfdruck generiert werden. Die Vorlagen
 werden mit Apache Velocity definiert. Eine sog. Command-Datei legt fest, welche Artefakte pro Entität generiert werden sollen
 und wie die Dateinamen lauten.
