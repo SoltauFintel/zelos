@@ -1,11 +1,16 @@
 # Zelos CodeGenerator
 
-Dieses Projekt dient dazu Java-Dateien und SQL-Skripte zu generieren. Dabei werden die Entitäten in einem **Modell**
-definiert. Dieses Modell wird als **XML-Datei** gespeichert und kann so zusammen mit den Sourcen versioniert werden.
+**Zelos ist eine Desktop-Anwendung für die modellbasierte Code-Generierung. Primär für Java-Dateien und SQL-Skripte gedacht.**
+
+Die Entitäten werden in einem **Modell** definiert. Dieses Modell wird als **XML-Datei** gespeichert und kann so zusammen
+mit den Sourcen versioniert werden.
 Zelos ist dreigeteilt: Modell, CodeGenerator und GUI. Die Entitäten können also komfortabel in einer Desktop-**GUI**
 bearbeitet werden. Eine oder mehrere Entitäten können dann auf Knopfdruck generiert werden. Die Vorlagen
-werden mit Apache Velocity definiert. Eine sog. Command-Datei legt fest, welche Artefakte pro Entität generiert werden sollen
-und wie die Dateinamen lauten.
+werden mit Apache Velocity definiert. Eine sog. Zelos-Command-Datei legt fest, welche Artefakte pro Entität generiert
+werden sollen und wie die Dateinamen lauten.
+
+Das Besondere an Zelos ist, dass man fachliche Datentypen angibt. Beim Modellieren muss man sich also nicht mehr Gedanken
+um die technische Abbildung für Java und verschiedene DBMS (Oracle, HSQLDB, ...) machen.
 
 ## Struktur
 
@@ -16,7 +21,7 @@ Ein **Feld** hat einen Datentyp.
 
 ## Build
 
-Nach dem Auschecken mit Eclipse muss die Ant-Datei zelos/build.xml (Target eclipse) ausgeführt werden, damit alle
+Nach dem Auschecken mit Eclipse muss die Ant-Datei zelos/build.xml (Default-Target eclipse) ausgeführt werden, damit alle
 erforderlichen JARs geladen werden.
 
 Build: Ant-Datei zelos/build.xml (Taget build) ausführen.
