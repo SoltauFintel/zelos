@@ -1,0 +1,19 @@
+<project name="zelos-codegenerator" basedir="." default="eclipse">
+
+	<target name="build">
+		<gradle task="build"/>
+	</target>
+	<target name="eclipse">
+		<gradle task="eclipse"/>
+	</target>
+
+	<macrodef name="gradle">
+		<attribute name="task"/>
+		<sequential>
+	        <exec executable="cmd" failonerror="true">
+	        	<arg line="/c gradlew.bat -g C:\jarcache\gradle @{task}"/>
+	        </exec>
+		</sequential>
+	</macrodef>
+	
+</project>

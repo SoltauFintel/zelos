@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml">
+	<padding><Insets top="0" right="8" bottom="8" left="8"/></padding>
+
+	<center>
+		<GridPane hgap="8" vgap="8">
+			<padding><Insets top="12" bottom="12"/></padding>
+			
+			<Label text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+			<TextField fx:id="name" maxHeight="2" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+			
+			<Label text="Name Tabelle:" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+			<TextField fx:id="nameTabelle" maxHeight="2" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+			<Label text="Typ:" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+			<ComboBox fx:id="typ" maxHeight="2" GridPane.rowIndex="3" GridPane.columnIndex="2">
+			</ComboBox>
+
+			<Label text="Länge:" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+			<TextField fx:id="laenge" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+			
+			<CheckBox fx:id="erforderlich" text="erforderlich" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+			<Label text="Vorbelegung:" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+			<TextField fx:id="vorbelegung" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+
+			<Label text="Beschreibung:" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+			<TextArea fx:id="beschreibung" prefHeight="70" GridPane.rowIndex="7" GridPane.columnIndex="2" wrapText="true"/>
+
+			<Label text="Eigenschaften:" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+			<TextArea fx:id="eigenschaften" prefHeight="70" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+		</GridPane>
+	</center>
+	<bottom>
+		<HBox spacing="12" alignment="CENTER">
+			<padding><Insets top="12" bottom="12"/></padding>
+			<Button fx:id="apply" onAction="#onApply" text="OK" minWidth="88"/>
+			<Button onAction="#onCancel" text="Abbruch" minWidth="88"/>
+		</HBox>
+	</bottom>
+
+</BorderPane>
+
+ 

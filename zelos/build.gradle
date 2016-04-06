@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+project.description = 'Zelos CodeGenerator'
+group = 'de.mwvb.zelos'
+version = '0.1.0'
+
+dependencies {
+	compile project(':zelos-codegenerator')	
+	compile project(':zelos-modell')	
+
+	testCompile 'junit:junit:4.12'
+}
+
+repositories {
+	mavenCentral()
+}
+
+// TODO: multi-project build aus Gradle Buch nachschlagen :-)

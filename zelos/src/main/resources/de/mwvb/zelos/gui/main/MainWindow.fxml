@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml">
+	<padding><Insets top="16" right="16" bottom="8" left="16"/></padding>
+
+	<center>
+		<TableView fx:id="grid">
+			<columns>
+				<TableColumn text="Entität" prefWidth="290">
+					<cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Felder" prefWidth="66" style="-fx-alignment: CENTER-RIGHT;">
+					<cellValueFactory><PropertyValueFactory property="anzahlFelder"/></cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</center>
+	<bottom>
+		<HBox spacing="12">
+			<padding><Insets top="12" bottom="12"/></padding>
+			<Button fx:id="neu" onAction="#onNeu" text="_Neu" minWidth="88">
+				<tooltip><Tooltip text="F2 oder Einfg"/></tooltip>
+			</Button>
+			<Button fx:id="bearbeiten" onAction="#onBearbeiten" text="_Bearbeiten" minWidth="88">
+				<tooltip><Tooltip text="eine Entität auswählen"/></tooltip>
+			</Button>
+			<Button fx:id="loeschen" onAction="#onLoeschen" text="_Löschen" minWidth="88">
+				<tooltip><Tooltip text="eine oder mehrere Entitäten auswählen"/></tooltip>
+			</Button>
+			<Button fx:id="generiere" onAction="#onGeneriere" text="_Generieren" minWidth="88">
+				<tooltip><Tooltip text="eine oder mehrere Entitäten auswählen"/></tooltip>
+			</Button>
+		</HBox>
+	</bottom>
+
+</BorderPane>
+
+ 

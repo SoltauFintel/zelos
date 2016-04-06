@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZELOS>
+	<CodeGeneratorFactory>de.mwvb.zelos.generator.CodeGeneratorFactory</CodeGeneratorFactory>
+	<ModellFactory>de.mwvb.zelos.model.dao.xml.XMLModellFactory</ModellFactory>
+	<Modell>modell.xml</Modell>
+</ZELOS>
