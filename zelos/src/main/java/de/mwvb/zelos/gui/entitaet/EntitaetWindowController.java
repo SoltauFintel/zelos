@@ -57,10 +57,10 @@ public class EntitaetWindowController {
 	private boolean view2Model() {
 		try {
 			Entitaet entitaet = getModel().e;
-			entitaet.setName(name.getText().trim());
-			entitaet.setNameTabelle(nameTabelle.getText().trim());
-			entitaet.setBeschreibung(beschreibung.getText().trim());
-			entitaet.setEigenschaften(eigenschaften.getText().trim());
+			entitaet.setName(name.getText() == null ? "" : name.getText().trim());
+			entitaet.setNameTabelle(nameTabelle.getText() == null ? "" : nameTabelle.getText().trim());
+			entitaet.setBeschreibung(beschreibung.getText() == null ? "" : beschreibung.getText().trim());
+			entitaet.setEigenschaften(eigenschaften.getText() == null ? "" : eigenschaften.getText().trim());
 			entitaet.validate();
 			return true;
 		} catch (ValidatorException e) {
