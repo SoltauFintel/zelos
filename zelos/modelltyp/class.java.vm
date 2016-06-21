@@ -1,4 +1,4 @@
-package irgendwas.${name.lower};
+package de.firma.appname.dto;
 
 /**
  * @author zelos

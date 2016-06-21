@@ -44,6 +44,12 @@ public class FeldWindowController {
 		typ.getItems().addAll(ZelosApplication.modell.getModelltyp().getDatentypen());
 		Window.disableTabKey(beschreibung);
 		Window.disableTabKey(eigenschaften);
+		typ.setOnAction((event) -> showLaenge());
+	}
+
+	private void showLaenge() {
+		Datentyp dt = typ.getSelectionModel().getSelectedItem();
+		laenge.setVisible(!dt.getBezeichnung().toLowerCase().equals("id")  && (dt.getJavaTyp().equals("String") || dt.getJavaTyp().equals("char")));
 	}
 	
 	public void model2View() {
@@ -56,6 +62,7 @@ public class FeldWindowController {
 		erforderlich.setSelected(model.e.isErforderlich());
 		vorbelegung.setText(model.e.getVorbelegung());
 		eigenschaften.setText(model.e.getEigenschaften());
+		showLaenge();
 	}
 	
 	private boolean view2Model() {
