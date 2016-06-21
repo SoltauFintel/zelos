@@ -1,5 +1,8 @@
-package irgendwas;
+package irgendwas.${name.lower};
 
+/**
+ * @author zelos
+ */
 public class ${name} {
 #foreach($f in $felder)
 	private ${f.javaTyp} ${f.name}#if($f.vorbelegung!="") = ${f.vorbelegung}#end;

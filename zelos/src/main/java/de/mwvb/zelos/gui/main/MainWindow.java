@@ -80,6 +80,7 @@ public class MainWindow extends Window<MainWindowController> {
 			// Generierung
 			CodeGeneratorFactory fac = ZelosApplication.config.createCodeGeneratorFactory();
 			entitaeten.forEach(e -> fac.create(e).generate());
+			System.out.println("Generierung fertig");
 		} catch (Exception ex2) {
 			Window.errorAlert(ex2);
 		}

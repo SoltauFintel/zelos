@@ -59,7 +59,11 @@ public class CodeGenerator {
 	private SimpleVelocity v(String dn) {
 		SimpleVelocity v = new SimpleVelocity(dir + dn + ".vm");
 		v.addVar("name", ent.getName());
+		v.addVar("name.lower", ent.getName().toLowerCase());
+		v.addVar("name.upper", ent.getName().toUpperCase());
 		v.addVar("nameTabelle", ent.getNameTabelle());
+		v.addVar("nameTabelle.lower", ent.getNameTabelle().toLowerCase());
+		v.addVar("nameTabelle.upper", ent.getNameTabelle().toUpperCase());
 		v.addVar("beschreibung", ent.getBeschreibung());
 		v.addVar("anzahlFelder", ent.getAnzahlFelder());
 		for (Map.Entry<String,String> e : ent.getProperties().entrySet()) {
@@ -90,6 +94,7 @@ public class CodeGenerator {
 	private void speichereOutput() {
 		for (Map.Entry<String,String> e : outputlist.entrySet()) {
 			try {
+				System.out.println("  generiere: " + new File(e.getKey()).getAbsolutePath());
 				new File(e.getKey()).getParentFile().mkdirs();
 				FileWriter w = new FileWriter(e.getKey());
 				w.write(e.getValue());
