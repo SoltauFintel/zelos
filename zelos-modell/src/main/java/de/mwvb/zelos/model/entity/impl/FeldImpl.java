@@ -42,6 +42,9 @@ public class FeldImpl implements Feld {
 	}
 
 	public String getNameTabelle() {
+		if (nameTabelle == null || nameTabelle.isEmpty()) {
+			return getName();
+		}
 		return nameTabelle;
 	}
 
@@ -147,14 +150,14 @@ public class FeldImpl implements Feld {
 	}
 
 	protected void validateName() {
-		EntitaetImpl.validateName(name, "Name", getEntitaet().getName(), name);
+		EntitaetImpl.validateName(name, "Name", getEntitaet().getName(), name, true);
 		if (!(name.charAt(0) >= 'a' && name.charAt(0) <= 'z')) {
 			throw new ValidatorException("Der Name muss mit einem Kleinbuchstaben beginnen!", getEntitaet().getName(), name);
 		}
 	}
 
 	protected void validateNameTabelle() {
-		EntitaetImpl.validateName(nameTabelle, "Name Tabelle", getEntitaet().getName(), name);
+		EntitaetImpl.validateName(nameTabelle, "Name Tabelle", getEntitaet().getName(), name, false);
 	}
 
 	protected void validateLaenge() {

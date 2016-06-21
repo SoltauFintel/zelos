@@ -40,6 +40,9 @@ public class EntitaetImpl implements Entitaet {
 	}
 	
 	public String getNameTabelle() {
+		if (nameTabelle == null || nameTabelle.isEmpty()) {
+			return getName();
+		}
 		return nameTabelle;
 	}
 	
@@ -142,22 +145,22 @@ public class EntitaetImpl implements Entitaet {
 	}
 
 	protected void validateName() {
-		validateName(name, "Name", name, null);
+		validateName(name, "Name", name, null, true);
 		if (!(name.charAt(0) >= 'A' && name.charAt(0) <= 'Z')) {
 			throw new ValidatorException("Der Name muss mit einem Großbuchstaben beginnen!", name, null);
 		}
 	}
 
 	protected void validateNameTabelle() {
-		validateName(nameTabelle, "Name Tabelle", name, null);
+		validateName(nameTabelle, "Name Tabelle", name, null, false);
 	}
 
 	protected void validateEigenscahften() {
 		EntitaetImpl.eigenschaften2Properties(eigenschaften);
 	}
 
-	public static void validateName(String eingabe, String feldname, String entitaetName, String feldName) {
-		if (eingabe == null || eingabe.isEmpty()) {
+	public static void validateName(String eingabe, String feldname, String entitaetName, String feldName, boolean pflicht) {
+		if (pflicht && (eingabe == null || eingabe.isEmpty())) {
 			throw new ValidatorException("Bitte machen Sie eine Eingabe für das Feld " + feldname + "!", entitaetName, feldname);
 		}
 		for (int i = 0; i < eingabe.length(); i++) {
