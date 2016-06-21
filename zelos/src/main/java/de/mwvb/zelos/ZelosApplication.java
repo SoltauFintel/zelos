@@ -23,6 +23,7 @@ public class ZelosApplication extends Application {
 		if (args.length > 0) {
 			File f = new File(args[0]);
 			if (f.exists()) {
+				System.out.println("[zelos start mittels args] " + f.getAbsolutePath()); // XXX debug
 				config = new ZelosConfig(f);
 			} else {
 				System.out.println("Datei nicht vorhanden: " + f.getAbsolutePath());
@@ -30,6 +31,7 @@ public class ZelosApplication extends Application {
 				return;
 			}
 		} else {
+			System.out.println("[zelos start ohne args] ./zelos.xml"); // XXX debug
 			config = new ZelosConfig();
 		}
 		ZelosApplication.modell = config.getModelle().get(0);

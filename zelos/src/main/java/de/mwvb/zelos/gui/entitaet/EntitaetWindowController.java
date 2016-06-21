@@ -126,6 +126,7 @@ public class EntitaetWindowController {
 			if (neu) {
 				grid.getItems().add(feld);
 				grid.getSelectionModel().select(feld);
+				getModel().e.getFelder().add(feld);
 			} else {
 				refreshGrid();
 			}

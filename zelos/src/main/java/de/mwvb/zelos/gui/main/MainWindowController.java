@@ -75,6 +75,7 @@ public class MainWindowController {
 			if (neu) {
 				grid.getItems().add(e);
 				grid.getSelectionModel().select(e);
+				ZelosApplication.modell.getEntitaeten().add(e);
 			} else {
 				refreshGrid();
 			}
