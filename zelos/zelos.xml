@@ -2,5 +2,5 @@
 <ZELOS>
 	<CodeGeneratorFactory>de.mwvb.zelos.generator.CodeGeneratorFactory</CodeGeneratorFactory>
 	<ModellFactory>de.mwvb.zelos.model.dao.xml.XMLModellFactory</ModellFactory>
-	<Modell>modell.xml</Modell>
+	<Modell>C:/dat/zelos/modell.xml</Modell>
 </ZELOS>

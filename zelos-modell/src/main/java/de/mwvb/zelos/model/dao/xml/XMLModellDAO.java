@@ -1,5 +1,7 @@
 package de.mwvb.zelos.model.dao.xml;
 
+import java.io.File;
+
 import de.mwvb.base.xml.XMLDocument;
 import de.mwvb.base.xml.XMLElement;
 import de.mwvb.zelos.model.dao.ModellDAO;
@@ -21,7 +23,12 @@ public class XMLModellDAO implements ModellDAO {
 	
 	@Override
 	public Modell load(String dateiname) {
-		XMLDocument dok = XMLDocument.load(dateiname);
+		XMLDocument dok;
+		if (new File(dateiname).exists()) {
+			dok = XMLDocument.load(dateiname);
+		} else {
+			dok = new XMLDocument("<MODELL/>");
+		}
 		Modelltyp modelltyp = factory.getModelltyp(dok.getElement().getValue("modelltyp"));
 		Modell modell = modelltyp.createModell();
 		modell.setDateiname(dateiname);
